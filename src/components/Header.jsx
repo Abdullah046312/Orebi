@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Container from './Container';
 import logo from '../assets/logo.png';
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,6 +50,7 @@ const Header = () => {
             <li className="text-[16px] font-bold text-[#F3F8FF] hover:text-[#5BBCFF] duration-300 ease-in-out">Contacts</li>
             <li className="text-[16px] font-bold text-[#F3F8FF] hover:text-[#5BBCFF] duration-300 ease-in-out">Journal</li>
           </ul>
+          
         </div>
       )}
     </Container>
