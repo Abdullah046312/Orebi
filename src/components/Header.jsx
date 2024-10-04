@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Container from './Container';
 import logo from '../assets/logo.png';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,14 +30,25 @@ const Header = () => {
 
       {/* Mobile Menu Toggle Button */}
       <button className="md:hidden p-2" onClick={toggleMenu}>
-        <svg
-          className="w-6 h-6 text-[#767676]"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
+        {isOpen ? (
+          <svg
+            className="w-6 h-6 text-[#767676]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        ) : (
+          <svg
+            className="w-6 h-6 text-[#767676]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        )}
       </button>
 
       {/* Mobile Menu */}
@@ -50,7 +61,6 @@ const Header = () => {
             <li className="text-[16px] font-bold text-[#F3F8FF] hover:text-[#5BBCFF] duration-300 ease-in-out">Contacts</li>
             <li className="text-[16px] font-bold text-[#F3F8FF] hover:text-[#5BBCFF] duration-300 ease-in-out">Journal</li>
           </ul>
-          
         </div>
       )}
     </Container>
